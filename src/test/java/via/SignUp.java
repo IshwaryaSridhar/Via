@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 public class SignUp extends Base {
 	
 	public void getData(String email, String name, String pwd, String mobile) {
-	  driver.findElement(By.id("wzrk-cancel")).click();
+	  //driver.findElement(By.id("wzrk-cancel")).click();
 	  driver.findElement(By.id("SignIn")).click();
 	  driver.findElement(By.xpath("//span[normalize-space()='SIGN UP']")).click();
 	  driver.findElement(By.xpath("//input[@id='emailIdSignUp']")).sendKeys(email);
@@ -18,7 +18,7 @@ public class SignUp extends Base {
 	  driver.findElement(By.xpath("//input[@id='signUpValidate']")).click(); 
 	}
 	
-  @Test(enabled=false, description="Testing with valid credentials")
+  @Test(enabled=true, description="Testing with valid credentials")
   public void tc_13() {
 	  driver.get("https://in.via.com/");
 	  getData("testingdemo1245@gmail.com", "Demo", "testingdemo", "9689996734");
@@ -27,7 +27,7 @@ public class SignUp extends Base {
 	  System.out.println("Sign Up successful");
   }
   
-  @Test(enabled=false, description="Testing with existing email and mobile")
+  @Test(enabled=true, description="Testing with existing email and mobile")
   public void tc_14() {
 	  driver.get("https://in.via.com/");
 	  getData("testingdemo111@gmail.com", "Demo", "testingdemo", "7689456734");
@@ -36,7 +36,7 @@ public class SignUp extends Base {
 	  System.out.println("Email/Mobile already registered with us");
   }
   
-  @Test(enabled=false, description="Testing with existing email")
+  @Test(enabled=true, description="Testing with existing email")
   public void tc_15() {
 	  driver.get("https://in.via.com/");
 	  getData("testingdemo111@gmail.com", "Demo", "testingdemo", "9289456734");
@@ -45,7 +45,7 @@ public class SignUp extends Base {
 	  System.out.println("Email/Mobile already registered with us");
   }
   
-  @Test(enabled=false, description="Testing with existing mobile")
+  @Test(enabled=true, description="Testing with existing mobile")
   public void tc_16() {
 	  driver.get("https://in.via.com/");
 	  getData("testingvia234@gmail.com", "Demo", "testingdemo", "7689456734");
@@ -54,7 +54,7 @@ public class SignUp extends Base {
 	  System.out.println("Email/Mobile already registered with us");
   }
   
-  @Test(enabled=false, description="Testing with invalid email")
+  @Test(enabled=true, description="Testing with invalid email")
   public void tc_17() {
 	  driver.get("https://in.via.com/");
 	  getData("testingdemo111gmail.com", "Demo", "testingdemo", "9867356473");
@@ -63,7 +63,7 @@ public class SignUp extends Base {
 	  System.out.println("Enter Valid Email");
   }
   
-  @Test(enabled=false, description="Testing with invalid mobile")
+  @Test(enabled=true, description="Testing with invalid mobile")
   public void tc_18() {
 	  driver.get("https://in.via.com/");
 	  getData("testingvia890@gmail.com", "Demo", "testingdemo", "1a&&56");
@@ -72,7 +72,7 @@ public class SignUp extends Base {
 	  System.out.println("Enter Valid Mobile");
   }
   
-  @Test(enabled=false, description="Testing with invalid password")
+  @Test(enabled=true, description="Testing with invalid password")
   public void tc_19() {
 	  driver.get("https://in.via.com/");
 	  getData("testingvia567@gmail.com", "Demo", "test", "7689206734");
@@ -81,7 +81,7 @@ public class SignUp extends Base {
 	  System.out.println("Password must be atleast 8 characters long");
   }
  
-  @Test(enabled=false, description="Testing with invalid name")
+  @Test(enabled=true, description="Testing with invalid name")
   public void tc_20() {
 	  driver.get("https://in.via.com/");
 	  getData("testprojectvia567@gmail.com", "12345", "testingdemo", "7689200004");
@@ -90,7 +90,7 @@ public class SignUp extends Base {
 	  System.out.println("Enter Valid Name");
   }
   
-  @Test(enabled=false, description="Testing with null credentials")
+  @Test(enabled=true, description="Testing with null credentials")
   public void tc_21() {
 	  driver.get("https://in.via.com/");
 	  getData("","","","");
@@ -99,7 +99,7 @@ public class SignUp extends Base {
 	  System.out.println("Enter valid email");
   }
   
-  @Test(enabled=false, description="Testing without email")
+  @Test(enabled=true, description="Testing without email")
   public void tc_22() {
 	  driver.get("https://in.via.com/");
 	  getData("","Demo","testingdemo","9034873894");
@@ -108,7 +108,7 @@ public class SignUp extends Base {
 	  System.out.println("Enter valid email");
   }
   
-  @Test(enabled=false, description="Testing without name")
+  @Test(enabled=true, description="Testing without name")
   public void tc_23() {
 	  driver.get("https://in.via.com/");
 	  getData("testingviademo@yahoo.com","","testingdemo","9034903894");
@@ -117,7 +117,7 @@ public class SignUp extends Base {
 	  System.out.println("Enter valid name");
   }
   
-  @Test(enabled=false, description="Testing without password")
+  @Test(enabled=true, description="Testing without password")
   public void tc_24() {
 	  driver.get("https://in.via.com/");
 	  getData("testingdemo98@gmail.com","Demo","","9034873894");
@@ -126,7 +126,7 @@ public class SignUp extends Base {
 	  System.out.println("Password must be atleast 8 characters long");
   }
   
-  @Test(enabled=false, description="Testing without mobile")
+  @Test(enabled=true, description="Testing without mobile")
   public void tc_25() {
 	  driver.get("https://in.via.com/");
 	  getData("testingvia123@yahoo.com","Demo","testingdemo","");
