@@ -155,7 +155,7 @@ public class Login extends Base{
   
   @Test(enabled=true, description="login with facebook invalid credentials")
   public void tc_12() throws Exception
-  {  
+  {   
 	  driver.get("https://in.via.com/");
       getData2("demo","test123");
       boolean d=driver.findElement(By.xpath("//div[@class='fsl fwb fcb']")).isDisplayed();
@@ -165,9 +165,9 @@ public class Login extends Base{
   }
   
   @Test(enabled=true, description="login with facebook missing credentials")
-  public void tc13()
+  public void tc_13()
   {   driver.switchTo().window(driver.getWindowHandles().toArray()[0].toString());
-  driver.manage().deleteAllCookies();
+      driver.manage().deleteAllCookies();
 	  driver.get("https://in.via.com/");
   
       getData2("","");
@@ -177,9 +177,9 @@ public class Login extends Base{
   }
   
   @Test(enabled=true, description="login with facebook valid credentials")
-  public void tc_11()
+  public void tc_14()
   {   driver.switchTo().window(driver.getWindowHandles().toArray()[0].toString());
-  driver.manage().deleteAllCookies();
+     driver.manage().deleteAllCookies();
 	  driver.get("https://in.via.com/");
   
       getData2("maref16555@busantei.com","testingdemo123$");
