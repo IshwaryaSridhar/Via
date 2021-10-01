@@ -10,6 +10,8 @@ import org.testng.annotations.BeforeTest;
 
 public class Base 
 {
+
+
 	public WebDriver driver;
 	@BeforeTest 
 	  public void beforeTest() 

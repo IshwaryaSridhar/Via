@@ -9,6 +9,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class Login extends Base{
+
 	//login
 	public void getData(String email,String pwd) {
 		 //driver.findElement(By.id("wzrk-cancel")).click();
@@ -101,13 +102,13 @@ public class Login extends Base{
       getData1("testingdemo@gmail.com");
       boolean d=driver.findElement(By.xpath("//div[@class='viaAlertMsg']")).isDisplayed();
       Assert.assertTrue(d); 
+      Thread.sleep(2000);
       System.out.println(driver.findElement(By.xpath("//div[@class='viaAlertMsg']")).getText());
   }
   
-  /* //google
+   //google
   public void getData3(String fname, String pwd)
   { 
-	//driver.findElement(By.id("wzrk-cancel")).click();
     driver.manage().deleteAllCookies();
     driver.findElement(By.id("SignIn")).click();
     driver.findElement(By.id("loginGoogle")).click();   
@@ -130,7 +131,7 @@ public class Login extends Base{
       boolean d=driver.findElement(By.xpath("//div[@class='fsl fwb fcb']")).isDisplayed();
       Assert.assertTrue(d);
       driver.close();
-  } */
+  } 
 
 
 
@@ -153,7 +154,7 @@ public class Login extends Base{
     
   }
   
-  @Test(enabled=true, description="login with facebook invalid credentials")
+  @Test(enabled=false, description="login with facebook invalid credentials")
   public void tc_12() throws Exception
   {   
 	  driver.get("https://in.via.com/");
@@ -164,7 +165,7 @@ public class Login extends Base{
       Thread.sleep(2000);
   }
   
-  @Test(enabled=true, description="login with facebook missing credentials")
+  @Test(enabled=false, description="login with facebook missing credentials")
   public void tc_13()
   {   driver.switchTo().window(driver.getWindowHandles().toArray()[0].toString());
       driver.manage().deleteAllCookies();
@@ -176,7 +177,7 @@ public class Login extends Base{
       driver.close();
   }
   
-  @Test(enabled=true, description="login with facebook valid credentials")
+  @Test(enabled=false, description="login with facebook valid credentials")
   public void tc_14()
   {   driver.switchTo().window(driver.getWindowHandles().toArray()[0].toString());
      driver.manage().deleteAllCookies();

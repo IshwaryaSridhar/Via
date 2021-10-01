@@ -5,7 +5,7 @@
 	<groupId>in.lntinfotech</groupId>
 	<artifactId>via</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	
+
 	<dependencies>
 		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
 		<dependency>
@@ -26,11 +26,13 @@
 			<version>3.1.5</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
+		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
 		<dependency>
 			<groupId>org.apache.poi</groupId>
-			<artifactId>poi</artifactId>
+			<artifactId>poi-ooxml</artifactId>
 			<version>5.0.0</version>
 		</dependency>
+
 	</dependencies>
-	
+
 </project>
