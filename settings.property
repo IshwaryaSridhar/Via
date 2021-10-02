@@ -1,0 +1,3 @@
+url= https://in.via.com/
+valid= //div[@class='elementPad menuLabel secNavIcon']
+invalid= //div[contains(text(),'Sign In')]

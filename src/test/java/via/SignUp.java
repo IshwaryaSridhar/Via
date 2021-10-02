@@ -1,17 +1,27 @@
 package via;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 
 
 public class SignUp extends Base {
 	
-	Excel_Import ex= new Excel_Import("C:\\Selenium\\DataFiles\\Data.xlsx");
-	
-  
-	public void getData(String email, String name, String pwd, String mobile) {
+	Excel_Import ex= new Excel_Import("src/test/resources/data/Data.xlsx");
+	Properties p =new Properties();
+
+	public void getData(String email, String name, String pwd, String mobile) throws Exception {
+	  
+	  p.load(new FileInputStream("settings.property"));
+	  driver.get(p.getProperty("url"));
 	  driver.findElement(By.id("SignIn")).click();
 	  driver.findElement(By.xpath("//span[normalize-space()='SIGN UP']")).click();
 	  driver.findElement(By.xpath("//input[@id='emailIdSignUp']")).sendKeys(email);
@@ -22,118 +32,118 @@ public class SignUp extends Base {
 	}
 	
   @Test(enabled=true, description="Testing with valid credentials")
-  public void tc_13() {
-	  driver.get("https://in.via.com/");
+  public void tc_13() throws Exception {
+
 	  getData(ex.getData("Sheet1", 1, 0),ex.getData("Sheet1", 1, 1),ex.getData("Sheet1", 1, 2),ex.getData("Sheet1", 1, 3));
-	  boolean data=driver.findElement(By.xpath("//div[@class='elementPad menuLabel secNavIcon']")).isDisplayed();
+	  boolean data=driver.findElement(By.xpath(p.getProperty("valid"))).isDisplayed();
 	  Assert.assertTrue(data);
-	  System.out.println("Sign Up successful");
+	  System.out.println(driver.findElement(By.xpath(p.getProperty("valid"))).getText());
   }
   
-  @Test(enabled=false, description="Testing with existing email and mobile")
-  public void tc_14() {
-	  driver.get("https://in.via.com/");
-	  getData("testingdemo111@gmail.com", "Demo", "testingdemo", "7689456734");
-	  boolean data=driver.findElement(By.xpath("//div[contains(text(),'Sign In')]")).isDisplayed();
-	  Assert.assertTrue(data);
-	  System.out.println("Email/Mobile already registered with us");
-  }
-  
-  @Test(enabled=false, description="Testing with existing email")
-  public void tc_15() {
-	  driver.get("https://in.via.com/");
-	  getData("testingdemo111@gmail.com", "Demo", "testingdemo", "9289456734");
-	  boolean data=driver.findElement(By.xpath("//div[contains(text(),'Sign In')]")).isDisplayed();
+  @Test(enabled=true, description="Testing with existing email and mobile")
+  public void tc_14() throws Exception {
+	  
+	  getData(ex.getData("Sheet1", 2, 0),ex.getData("Sheet1", 2, 1),ex.getData("Sheet1", 2, 2),ex.getData("Sheet1", 2, 3));
+	  boolean data=driver.findElement(By.xpath(p.getProperty("invalid"))).isDisplayed();
 	  Assert.assertTrue(data);
 	  System.out.println("Email/Mobile already registered with us");
   }
   
-  @Test(enabled=false, description="Testing with existing mobile")
-  public void tc_16() {
-	  driver.get("https://in.via.com/");
-	  getData("testingvia234@gmail.com", "Demo", "testingdemo", "7689456734");
-	  boolean data=driver.findElement(By.xpath("//div[contains(text(),'Sign In')]")).isDisplayed();
+  @Test(enabled=true, description="Testing with existing email")
+  public void tc_15() throws Exception {
+	  
+	  getData(ex.getData("Sheet1", 3, 0),ex.getData("Sheet1", 3, 1),ex.getData("Sheet1", 3, 2),ex.getData("Sheet1", 3, 3));
+	  boolean data=driver.findElement(By.xpath(p.getProperty("invalid"))).isDisplayed();
 	  Assert.assertTrue(data);
 	  System.out.println("Email/Mobile already registered with us");
   }
   
-  @Test(enabled=false, description="Testing with invalid email")
-  public void tc_17() {
-	  driver.get("https://in.via.com/");
-	  getData("testingdemo111gmail.com", "Demo", "testingdemo", "9867356473");
-	  boolean data=driver.findElement(By.xpath("//div[contains(text(),'Sign In')]")).isDisplayed();
+  @Test(enabled=true, description="Testing with existing mobile")
+  public void tc_16() throws Exception {
+	 
+	  getData(ex.getData("Sheet1", 4, 0),ex.getData("Sheet1", 4, 1),ex.getData("Sheet1", 4, 2),ex.getData("Sheet1", 4, 3));
+	  boolean data=driver.findElement(By.xpath(p.getProperty("invalid"))).isDisplayed();
+	  Assert.assertTrue(data);
+	  System.out.println("Email/Mobile already registered with us");
+  }
+  
+  @Test(enabled=true, description="Testing with invalid email")
+  public void tc_17() throws Exception {
+	  
+	  getData(ex.getData("Sheet1", 5, 0),ex.getData("Sheet1", 5, 1),ex.getData("Sheet1", 5, 2),ex.getData("Sheet1", 5, 3));
+	  boolean data=driver.findElement(By.xpath(p.getProperty("invalid"))).isDisplayed();
 	  Assert.assertTrue(data);
 	  System.out.println("Enter Valid Email");
   }
   
-  @Test(enabled=false, description="Testing with invalid mobile")
-  public void tc_18() {
-	  driver.get("https://in.via.com/");
-	  getData("testingvia890@gmail.com", "Demo", "testingdemo", "1a&&56");
-	  boolean data=driver.findElement(By.xpath("//div[contains(text(),'Sign In')]")).isDisplayed();
+  @Test(enabled=true, description="Testing with invalid mobile")
+  public void tc_18() throws Exception {
+	  
+	  getData(ex.getData("Sheet1", 6, 0),ex.getData("Sheet1", 6, 1),ex.getData("Sheet1", 6, 2),ex.getData("Sheet1", 6, 3));
+	  boolean data=driver.findElement(By.xpath(p.getProperty("invalid"))).isDisplayed();
 	  Assert.assertTrue(data);
 	  System.out.println("Enter Valid Mobile");
   }
   
-  @Test(enabled=false, description="Testing with invalid password")
-  public void tc_19() {
-	  driver.get("https://in.via.com/");
-	  getData("testingvia567@gmail.com", "Demo", "test", "7689206734");
-	  boolean data=driver.findElement(By.xpath("//div[contains(text(),'Sign In')]")).isDisplayed();
+  @Test(enabled=true, description="Testing with invalid password")
+  public void tc_19() throws Exception {
+	  
+	  getData(ex.getData("Sheet1", 7, 0),ex.getData("Sheet1", 7, 1),ex.getData("Sheet1", 7, 2),ex.getData("Sheet1", 7, 3));
+	  boolean data=driver.findElement(By.xpath(p.getProperty("invalid"))).isDisplayed();
 	  Assert.assertTrue(data);
 	  System.out.println("Password must be atleast 8 characters long");
   }
  
-  @Test(enabled=false, description="Testing with invalid name")
-  public void tc_20() {
-	  driver.get("https://in.via.com/");
-	  getData("testprojectvia567@gmail.com", "12345", "testingdemo", "7689200004");
-	  boolean data=driver.findElement(By.xpath("//div[contains(text(),'Sign In')]")).isDisplayed();
+  @Test(enabled=true, description="Testing with invalid name")
+  public void tc_20() throws Exception {
+	 
+	  getData(ex.getData("Sheet1", 8, 0),ex.getData("Sheet1", 8, 1),ex.getData("Sheet1", 8, 2),ex.getData("Sheet1", 8, 3));
+	  boolean data=driver.findElement(By.xpath(p.getProperty("invalid"))).isDisplayed();
 	  Assert.assertTrue(data);
 	  System.out.println("Enter Valid Name");
   }
   
-  @Test(enabled=false, description="Testing with null credentials")
-  public void tc_21() {
-	  driver.get("https://in.via.com/");
-	  getData("","","","");
-	  boolean data=driver.findElement(By.xpath("//div[contains(text(),'Sign In')]")).isDisplayed();
+  @Test(enabled=true, description="Testing with null credentials")
+  public void tc_21() throws Exception {
+	  
+	  getData(ex.getData("Sheet1", 9, 0),ex.getData("Sheet1", 9, 1),ex.getData("Sheet1", 9, 2),ex.getData("Sheet1", 9, 3));
+	  boolean data=driver.findElement(By.xpath(p.getProperty("invalid"))).isDisplayed();
 	  Assert.assertTrue(data);
 	  System.out.println("Enter valid email");
   }
   
-  @Test(enabled=false, description="Testing without email")
-  public void tc_22() {
-	  driver.get("https://in.via.com/");
-	  getData("","Demo","testingdemo","9034873894");
-	  boolean data=driver.findElement(By.xpath("//div[contains(text(),'Sign In')]")).isDisplayed();
+  @Test(enabled=true, description="Testing without email")
+  public void tc_22() throws Exception {
+	  
+	  getData(ex.getData("Sheet1", 10, 0),ex.getData("Sheet1", 10, 1),ex.getData("Sheet1", 10, 2),ex.getData("Sheet1", 10, 3));
+	  boolean data=driver.findElement(By.xpath(p.getProperty("invalid"))).isDisplayed();
 	  Assert.assertTrue(data);
 	  System.out.println("Enter valid email");
   }
   
-  @Test(enabled=false, description="Testing without name")
-  public void tc_23() {
-	  driver.get("https://in.via.com/");
-	  getData("testingviademo@yahoo.com","","testingdemo","9034903894");
-	  boolean data=driver.findElement(By.xpath("//div[contains(text(),'Sign In')]")).isDisplayed();
+  @Test(enabled=true, description="Testing without name")
+  public void tc_23() throws Exception {
+	  
+	  getData(ex.getData("Sheet1", 11, 0),ex.getData("Sheet1", 11, 1),ex.getData("Sheet1", 11, 2),ex.getData("Sheet1", 11, 3));
+	  boolean data=driver.findElement(By.xpath(p.getProperty("invalid"))).isDisplayed();
 	  Assert.assertTrue(data);
 	  System.out.println("Enter valid name");
   }
   
-  @Test(enabled=false, description="Testing without password")
-  public void tc_24() {
-	  driver.get("https://in.via.com/");
-	  getData("testingdemo98@gmail.com","Demo","","9034873894");
-	  boolean data=driver.findElement(By.xpath("//div[contains(text(),'Sign In')]")).isDisplayed();
+  @Test(enabled=true, description="Testing without password")
+  public void tc_24() throws Exception {
+	 
+	  getData(ex.getData("Sheet1", 12, 0),ex.getData("Sheet1", 12, 1),ex.getData("Sheet1", 12, 2),ex.getData("Sheet1", 12, 3));
+	  boolean data=driver.findElement(By.xpath(p.getProperty("invalid"))).isDisplayed();
 	  Assert.assertTrue(data);
 	  System.out.println("Password must be atleast 8 characters long");
   }
   
-  @Test(enabled=false, description="Testing without mobile")
-  public void tc_25() {
-	  driver.get("https://in.via.com/");
-	  getData("testingvia123@yahoo.com","Demo","testingdemo","");
-	  boolean data=driver.findElement(By.xpath("//div[contains(text(),'Sign In')]")).isDisplayed();
+  @Test(enabled=true, description="Testing without mobile")
+  public void tc_25() throws Exception {
+	  
+	  getData(ex.getData("Sheet1", 13, 0),ex.getData("Sheet1", 13, 1),ex.getData("Sheet1", 13, 2),ex.getData("Sheet1", 13, 3));
+	  boolean data=driver.findElement(By.xpath(p.getProperty("invalid"))).isDisplayed();
 	  Assert.assertTrue(data);
 	  System.out.println("Mobile Required");
   }

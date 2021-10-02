@@ -45,7 +45,7 @@ public class Login extends Base{
 	  boolean d=driver.findElement(By.cssSelector("div[class='qtip-content']")).isDisplayed();
 	  Assert.assertTrue(d);	  
   }
-  @Test(enabled=false, description="login with invalid credentials")
+  @Test(enabled=false, description="login with null credentials")
   public void tc_4() {
 	  driver.get("https://in.via.com/");
 	  getData(" ", "");
@@ -53,7 +53,7 @@ public class Login extends Base{
 	  Assert.assertTrue(d);  
   }
   
-  @Test(enabled=false, description="login with invalid credentials")
+  @Test(enabled=false, description="login with null password")
   public void tc_5() {
 	  driver.get("https://in.via.com/");
 	  getData("logeshm2000@gmail.com ", "");
@@ -61,7 +61,7 @@ public class Login extends Base{
 	  Assert.assertTrue(d);  
   }
   
-  @Test(enabled=false, description="login with invalid credentials")
+  @Test(enabled=false, description="login with null email")
   public void tc_6() {
 	  driver.get("https://in.via.com/");
 	  getData(" ", "password123");
@@ -106,7 +106,7 @@ public class Login extends Base{
       System.out.println(driver.findElement(By.xpath("//div[@class='viaAlertMsg']")).getText());
   }
   
-   //google
+  /* //google
   public void getData3(String fname, String pwd)
   { 
     driver.manage().deleteAllCookies();
@@ -115,23 +115,23 @@ public class Login extends Base{
     Set<String> allWin=driver.getWindowHandles();
     List<String> allWin2= new ArrayList(allWin);
     driver.switchTo().window(allWin2.get(1));
-    driver.findElement(By.xpath("//div[@class='BHzsHc']")).click();
+    //driver.findElement(By.xpath("//div[@class='BHzsHc']")).click();
     driver.findElement(By.xpath("//input[@id='identifierId']")).sendKeys(fname);
     driver.findElement(By.xpath("//span[normalize-space()='Next']")).click();
     driver.findElement(By.xpath("//input[@name='password']")).sendKeys(pwd);
     driver.findElement(By.xpath("//span[normalize-space()='Next']")).click();  
-  }
+  } 
   
   @Test(enabled=true, description="login with facebook missing credentials")
   public void tc_10()
   {   driver.switchTo().window(driver.getWindowHandles().toArray()[0].toString());
 	  driver.get("https://in.via.com/");
   
-      getData3("ishwarya","password");
+      getData3("s.ishwarya73@gmail.com","bangalore123_");
       boolean d=driver.findElement(By.xpath("//div[@class='fsl fwb fcb']")).isDisplayed();
       Assert.assertTrue(d);
       driver.close();
-  } 
+  } */
 
 
 
@@ -141,7 +141,6 @@ public class Login extends Base{
 //facebook
   public void getData2(String fname, String pwd)
   { 
-	//driver.findElement(By.id("wzrk-cancel")).click();
     
     driver.findElement(By.id("SignIn")).click();
     driver.findElement(By.id("loginFacebook")).click();   
@@ -155,7 +154,7 @@ public class Login extends Base{
   }
   
   @Test(enabled=false, description="login with facebook invalid credentials")
-  public void tc_12() throws Exception
+  public void tc_10() throws Exception
   {   
 	  driver.get("https://in.via.com/");
       getData2("demo","test123");
@@ -166,7 +165,7 @@ public class Login extends Base{
   }
   
   @Test(enabled=false, description="login with facebook missing credentials")
-  public void tc_13()
+  public void tc_11()
   {   driver.switchTo().window(driver.getWindowHandles().toArray()[0].toString());
       driver.manage().deleteAllCookies();
 	  driver.get("https://in.via.com/");
@@ -177,16 +176,6 @@ public class Login extends Base{
       driver.close();
   }
   
-  @Test(enabled=false, description="login with facebook valid credentials")
-  public void tc_14()
-  {   driver.switchTo().window(driver.getWindowHandles().toArray()[0].toString());
-     driver.manage().deleteAllCookies();
-	  driver.get("https://in.via.com/");
   
-      getData2("maref16555@busantei.com","testingdemo123$");
-      boolean d=driver.findElement(By.xpath("//div[@class='_50f3']")).isDisplayed();
-      Assert.assertTrue(d);
-      driver.close();
-  }
   
 }
