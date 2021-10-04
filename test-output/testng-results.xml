@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="1" ignored="0" total="13" passed="12">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="39710" started-at="2021-10-02T08:52:32 IST" finished-at="2021-10-02T08:53:12 IST">
+  <suite name="Default suite" duration-ms="55777" started-at="2021-10-04T16:19:45 IST" finished-at="2021-10-04T16:20:41 IST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="39710" started-at="2021-10-02T08:52:32 IST" finished-at="2021-10-02T08:53:12 IST">
+    <test name="Default test" duration-ms="55777" started-at="2021-10-04T16:19:45 IST" finished-at="2021-10-04T16:20:41 IST">
       <class name="via.SignUp">
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:via.SignUp@25641d39]" name="beforeTest" is-config="true" duration-ms="3271" started-at="2021-10-02T08:52:32 IST" finished-at="2021-10-02T08:52:35 IST">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:via.SignUp@1a6d8329]" name="beforeTest" is-config="true" duration-ms="6549" started-at="2021-10-04T16:19:45 IST" finished-at="2021-10-04T16:19:52 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="FAIL" signature="tc_13()[pri:0, instance:via.SignUp@25641d39]" name="tc_13" duration-ms="8910" started-at="2021-10-02T08:52:35 IST" description="Testing with valid credentials" finished-at="2021-10-02T08:52:44 IST">
+        <test-method status="FAIL" signature="tc_13()[pri:0, instance:via.SignUp@1a6d8329]" name="tc_13" duration-ms="15965" started-at="2021-10-04T16:19:52 IST" description="Testing with valid credentials" finished-at="2021-10-04T16:20:08 IST">
           <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
               <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//div[@class='elementPad menuLabel secNavIcon']"}
@@ -20,8 +20,8 @@ For documentation on this error, please visit: https://www.seleniumhq.org/except
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'DESKTOP-CIBJPLA', ip: '192.168.0.199', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 94.0.4606.61, chrome: {chromedriverVersion: 94.0.4606.61 (418b78f5838ed..., userDataDir: C:\Users\ishwa\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:62799}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: fcbd12d5aea3817390102ab4e14f1496
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 94.0.4606.61, chrome: {chromedriverVersion: 94.0.4606.61 (418b78f5838ed..., userDataDir: C:\Users\ishwa\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:59198}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 2593e9bbdb68d06b7b17bbafaaaac1f7
 *** Element info: {Using=xpath, value=//div[@class='elementPad menuLabel secNavIcon']}]]>
             </message>
             <full-stacktrace>
@@ -31,8 +31,8 @@ For documentation on this error, please visit: https://www.seleniumhq.org/except
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'DESKTOP-CIBJPLA', ip: '192.168.0.199', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 94.0.4606.61, chrome: {chromedriverVersion: 94.0.4606.61 (418b78f5838ed..., userDataDir: C:\Users\ishwa\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:62799}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: fcbd12d5aea3817390102ab4e14f1496
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 94.0.4606.61, chrome: {chromedriverVersion: 94.0.4606.61 (418b78f5838ed..., userDataDir: C:\Users\ishwa\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:59198}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 2593e9bbdb68d06b7b17bbafaaaac1f7
 *** Element info: {Using=xpath, value=//div[@class='elementPad menuLabel secNavIcon']}
 at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
@@ -48,7 +48,7 @@ at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:3
 at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
 at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
 at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-at via.SignUp.tc_13(SignUp.java:38)
+at via.SignUp.tc_13(SignUp.java:47)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -83,55 +83,55 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tc_13 -->
-        <test-method status="PASS" signature="tc_14()[pri:0, instance:via.SignUp@25641d39]" name="tc_14" duration-ms="2586" started-at="2021-10-02T08:52:44 IST" description="Testing with existing email and mobile" finished-at="2021-10-02T08:52:47 IST">
+        <test-method status="PASS" signature="tc_14()[pri:0, instance:via.SignUp@1a6d8329]" name="tc_14" duration-ms="3487" started-at="2021-10-04T16:20:08 IST" description="Testing with existing email and mobile" finished-at="2021-10-04T16:20:11 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tc_14 -->
-        <test-method status="PASS" signature="tc_15()[pri:0, instance:via.SignUp@25641d39]" name="tc_15" duration-ms="2425" started-at="2021-10-02T08:52:47 IST" description="Testing with existing email" finished-at="2021-10-02T08:52:49 IST">
+        <test-method status="PASS" signature="tc_15()[pri:0, instance:via.SignUp@1a6d8329]" name="tc_15" duration-ms="2187" started-at="2021-10-04T16:20:11 IST" description="Testing with existing email" finished-at="2021-10-04T16:20:13 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tc_15 -->
-        <test-method status="PASS" signature="tc_16()[pri:0, instance:via.SignUp@25641d39]" name="tc_16" duration-ms="2076" started-at="2021-10-02T08:52:49 IST" description="Testing with existing mobile" finished-at="2021-10-02T08:52:51 IST">
+        <test-method status="PASS" signature="tc_16()[pri:0, instance:via.SignUp@1a6d8329]" name="tc_16" duration-ms="2130" started-at="2021-10-04T16:20:13 IST" description="Testing with existing mobile" finished-at="2021-10-04T16:20:15 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tc_16 -->
-        <test-method status="PASS" signature="tc_17()[pri:0, instance:via.SignUp@25641d39]" name="tc_17" duration-ms="1846" started-at="2021-10-02T08:52:51 IST" description="Testing with invalid email" finished-at="2021-10-02T08:52:53 IST">
+        <test-method status="PASS" signature="tc_17()[pri:0, instance:via.SignUp@1a6d8329]" name="tc_17" duration-ms="2222" started-at="2021-10-04T16:20:15 IST" description="Testing with invalid email" finished-at="2021-10-04T16:20:18 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tc_17 -->
-        <test-method status="PASS" signature="tc_18()[pri:0, instance:via.SignUp@25641d39]" name="tc_18" duration-ms="2253" started-at="2021-10-02T08:52:53 IST" description="Testing with invalid mobile" finished-at="2021-10-02T08:52:56 IST">
+        <test-method status="PASS" signature="tc_18()[pri:0, instance:via.SignUp@1a6d8329]" name="tc_18" duration-ms="2293" started-at="2021-10-04T16:20:18 IST" description="Testing with invalid mobile" finished-at="2021-10-04T16:20:20 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tc_18 -->
-        <test-method status="PASS" signature="tc_19()[pri:0, instance:via.SignUp@25641d39]" name="tc_19" duration-ms="2019" started-at="2021-10-02T08:52:56 IST" description="Testing with invalid password" finished-at="2021-10-02T08:52:58 IST">
+        <test-method status="PASS" signature="tc_19()[pri:0, instance:via.SignUp@1a6d8329]" name="tc_19" duration-ms="2307" started-at="2021-10-04T16:20:20 IST" description="Testing with invalid password" finished-at="2021-10-04T16:20:22 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tc_19 -->
-        <test-method status="PASS" signature="tc_20()[pri:0, instance:via.SignUp@25641d39]" name="tc_20" duration-ms="1952" started-at="2021-10-02T08:52:58 IST" description="Testing with invalid name" finished-at="2021-10-02T08:53:00 IST">
+        <test-method status="PASS" signature="tc_20()[pri:0, instance:via.SignUp@1a6d8329]" name="tc_20" duration-ms="2393" started-at="2021-10-04T16:20:22 IST" description="Testing with invalid name" finished-at="2021-10-04T16:20:25 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tc_20 -->
-        <test-method status="PASS" signature="tc_21()[pri:0, instance:via.SignUp@25641d39]" name="tc_21" duration-ms="1701" started-at="2021-10-02T08:53:00 IST" description="Testing with null credentials" finished-at="2021-10-02T08:53:01 IST">
+        <test-method status="PASS" signature="tc_21()[pri:0, instance:via.SignUp@1a6d8329]" name="tc_21" duration-ms="2020" started-at="2021-10-04T16:20:25 IST" description="Testing with null credentials" finished-at="2021-10-04T16:20:27 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tc_21 -->
-        <test-method status="PASS" signature="tc_22()[pri:0, instance:via.SignUp@25641d39]" name="tc_22" duration-ms="1793" started-at="2021-10-02T08:53:01 IST" description="Testing without email" finished-at="2021-10-02T08:53:03 IST">
+        <test-method status="PASS" signature="tc_22()[pri:0, instance:via.SignUp@1a6d8329]" name="tc_22" duration-ms="2590" started-at="2021-10-04T16:20:27 IST" description="Testing without email" finished-at="2021-10-04T16:20:29 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tc_22 -->
-        <test-method status="PASS" signature="tc_23()[pri:0, instance:via.SignUp@25641d39]" name="tc_23" duration-ms="1991" started-at="2021-10-02T08:53:03 IST" description="Testing without name" finished-at="2021-10-02T08:53:05 IST">
+        <test-method status="PASS" signature="tc_23()[pri:0, instance:via.SignUp@1a6d8329]" name="tc_23" duration-ms="2419" started-at="2021-10-04T16:20:29 IST" description="Testing without name" finished-at="2021-10-04T16:20:32 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tc_23 -->
-        <test-method status="PASS" signature="tc_24()[pri:0, instance:via.SignUp@25641d39]" name="tc_24" duration-ms="1961" started-at="2021-10-02T08:53:05 IST" description="Testing without password" finished-at="2021-10-02T08:53:07 IST">
+        <test-method status="PASS" signature="tc_24()[pri:0, instance:via.SignUp@1a6d8329]" name="tc_24" duration-ms="2214" started-at="2021-10-04T16:20:32 IST" description="Testing without password" finished-at="2021-10-04T16:20:34 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tc_24 -->
-        <test-method status="PASS" signature="tc_25()[pri:0, instance:via.SignUp@25641d39]" name="tc_25" duration-ms="1987" started-at="2021-10-02T08:53:07 IST" description="Testing without mobile" finished-at="2021-10-02T08:53:09 IST">
+        <test-method status="PASS" signature="tc_25()[pri:0, instance:via.SignUp@1a6d8329]" name="tc_25" duration-ms="4498" started-at="2021-10-04T16:20:34 IST" description="Testing without mobile" finished-at="2021-10-04T16:20:38 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tc_25 -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:via.SignUp@25641d39]" name="afterTest" is-config="true" duration-ms="2831" started-at="2021-10-02T08:53:09 IST" finished-at="2021-10-02T08:53:12 IST">
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:via.SignUp@1a6d8329]" name="afterTest" is-config="true" duration-ms="2400" started-at="2021-10-04T16:20:38 IST" finished-at="2021-10-04T16:20:41 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
