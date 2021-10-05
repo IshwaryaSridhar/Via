@@ -48,7 +48,7 @@ public class Login extends Base{
 	  tc=ext.createTest("LoginTest1.html");
 	  tc.info("login with valid credentials");
 	  tc.pass("test pass");
-	  ext.flush();
+	  
   }
   
   @Test(enabled=true, description="login with invalid credentials")
@@ -60,7 +60,7 @@ public class Login extends Base{
 	  tc=ext.createTest("LoginTest2.html");
 	  tc.info("login with invalid credentials");
 	  tc.pass("test pass");
-	  ext.flush();
+	  
   }
   @Test(enabled=true, description="login with invalid credentials")
   public void tc_03() throws Exception {
@@ -70,7 +70,7 @@ public class Login extends Base{
 	  tc=ext.createTest("LoginTest3.html");
 	  tc.info("login with invalid credentials");
 	  tc.pass("test pass");
-	  ext.flush();
+	  
 	  
   }
   @Test(enabled=true, description="login with null credentials")
@@ -81,7 +81,7 @@ public class Login extends Base{
 	  tc=ext.createTest("LoginTest4.html");
 	  tc.info("login with null credentials");
 	  tc.pass("test pass");
-	  ext.flush();
+	  
   }
   
   @Test(enabled=true, description="login with null password")
@@ -92,7 +92,7 @@ public class Login extends Base{
 	  tc=ext.createTest("LoginTest5.html");
 	  tc.info("login with null password");
 	  tc.pass("test pass");
-	  ext.flush();
+	 
   }
   
   @Test(enabled=true, description="login with null email")
@@ -103,7 +103,7 @@ public class Login extends Base{
 	  tc=ext.createTest("LoginTest6.html");
 	  tc.info("login with null email");
 	  tc.pass("test pass");
-	  ext.flush();
+	  
   }
   
   
@@ -126,7 +126,7 @@ public class Login extends Base{
       tc=ext.createTest("LoginTest7.html");
 	  tc.info("reset password with invalid email");
 	  tc.pass("test pass");
-	  ext.flush();
+	  
   }
   @Test(enabled=true, description="reset with null email")
   public void tc_08(){  
@@ -137,7 +137,7 @@ public class Login extends Base{
       tc=ext.createTest("LoginTest8.html");
 	  tc.info("reset with null email");
 	  tc.pass("test pass");
-	  ext.flush();
+	 
   }
   
   @Test(enabled=true, description="reset with unregistered email")
@@ -150,25 +150,20 @@ public class Login extends Base{
       tc=ext.createTest("LoginTest9.html");
 	  tc.info("reset with unregistered email");
 	  tc.pass("test pass");
-	  ext.flush();
+	  
   }
   
-  @Test(enabled=true, description="reset with existing email")
+  @Test(enabled=true, description="reset with invalid email")
   public void tc_10() throws Exception{  
       getData1(ex.getData("Sheet2", 10, 0));
-      Scanner sc = new Scanner(System.in);  
-      System.out.println("Enter the OTP");
-      Thread.sleep(50000);
-      driver.findElement(By.xpath(p.getProperty("otpip"))).sendKeys(sc.nextLine());
-      Thread.sleep(20000);
-      driver.findElement(By.xpath(p.getProperty("rpwd"))).sendKeys(ex.getData("Sheet2", 10, 1));
-      driver.findElement(By.xpath(p.getProperty("rfin"))).click();
-      boolean d= driver.findElement(By.xpath(p.getProperty("valid"))).isDisplayed();
+      boolean d=driver.findElement(By.xpath(p.getProperty("otp"))).isDisplayed();
       Assert.assertTrue(d); 
+      Thread.sleep(2000);
+      System.out.println(driver.findElement(By.xpath(p.getProperty("alert"))).getText());
       tc=ext.createTest("LoginTest10.html");
-	  tc.info("reset with existing email");
+	  tc.info("reset with unregistered email");
 	  tc.pass("test pass");
-	  ext.flush();
+	  
   }
   
   
@@ -198,7 +193,7 @@ public class Login extends Base{
       tc=ext.createTest("LoginTest11.html");
 	  tc.info("login with facebook invalid credentials");
 	  tc.pass("test pass");
-	  ext.flush();
+	  
       driver.close();
       
   }

@@ -5,9 +5,21 @@
     <classes>
       <class name="via.SignUp">
         <methods>
-          <include name="beforeTest"/>
-          <include name="afterTest"/>
+          <include name="tc_22"/>
+          <include name="tc_18"/>
+          <include name="tc_17"/>
+          <include name="tc_16"/>
+          <include name="tc_15"/>
+          <include name="tc_14"/>
+          <include name="tc_25"/>
           <include name="tc_13"/>
+          <include name="tc_24"/>
+          <include name="tc_23"/>
+          <include name="tc_21"/>
+          <include name="beforeTest"/>
+          <include name="tc_20"/>
+          <include name="tc_19"/>
+          <include name="afterTest"/>
         </methods>
       </class> <!-- via.SignUp -->
     </classes>

@@ -46,6 +46,4 @@ forgot=forgotEmail
 click=[class='inlineBtn panelBtn jsSendOtp']
 otp=//input[@value='Send OTP']
 alert=//div[@class='viaAlertMsg']
-otpip-//input[@id='otp']
-rpwd=//input[@id='newPassword']
-rfin=//input[@id='resetPassword']
+

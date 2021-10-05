@@ -47,6 +47,8 @@ public class SignUp extends Base {
 	  boolean data=driver.findElement(By.xpath(p.getProperty("valid"))).isDisplayed();
 	  Assert.assertTrue(data);
 	  System.out.println(driver.findElement(By.xpath(p.getProperty("valid"))).getText());
+	  driver.findElement(By.xpath(p.getProperty("valid"))).click();
+	  driver.findElement(By.xpath(p.getProperty("logout"))).click();
 	  tc=ext.createTest("SignupTest1.html");
 	  tc.info("Testing with valid credentials");
 	  tc.pass("test pass");
