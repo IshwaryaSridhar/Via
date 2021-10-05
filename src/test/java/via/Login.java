@@ -37,7 +37,7 @@ public class Login extends Base{
 		 driver.findElement(By.id(p.getProperty("login"))).click();     
 	}
 	
-  @Test(enabled=true, description="login with valid credentials")
+  @Test(enabled=false, description="login with valid credentials")
   public void tc_01() throws Exception {
 	 getData(ex.getData("Sheet2", 1, 0),ex.getData("Sheet2", 1, 1));  
 	 boolean d=driver.findElement(By.xpath(p.getProperty("validl"))).isDisplayed();
@@ -51,7 +51,7 @@ public class Login extends Base{
 	  
   }
   
-  @Test(enabled=true, description="login with invalid credentials")
+  @Test(enabled=false, description="login with invalid credentials")
   public void tc_02() throws Exception {
 	  getData(ex.getData("Sheet2", 2, 0),ex.getData("Sheet2", 2, 1));
 	  Thread.sleep(2000);
@@ -62,7 +62,7 @@ public class Login extends Base{
 	  tc.pass("test pass");
 	  
   }
-  @Test(enabled=true, description="login with invalid credentials")
+  @Test(enabled=false, description="login with invalid credentials")
   public void tc_03() throws Exception {
 	  getData(ex.getData("Sheet2", 3, 0),ex.getData("Sheet2", 3, 1));
 	  boolean d=driver.findElement(By.cssSelector(p.getProperty("invalidl1"))).isDisplayed();
@@ -73,7 +73,7 @@ public class Login extends Base{
 	  
 	  
   }
-  @Test(enabled=true, description="login with null credentials")
+  @Test(enabled=false, description="login with null credentials")
   public void tc_04() throws Exception {
 	  getData(ex.getData("Sheet2", 4, 0),ex.getData("Sheet2", 4, 1));
 	  boolean d=driver.findElement(By.cssSelector(p.getProperty("invalidl1"))).isDisplayed();
@@ -84,7 +84,7 @@ public class Login extends Base{
 	  
   }
   
-  @Test(enabled=true, description="login with null password")
+  @Test(enabled=false, description="login with null password")
   public void tc_05() throws Exception {
 	  getData(ex.getData("Sheet2", 5, 0),ex.getData("Sheet2", 5, 1));
 	  boolean d=driver.findElement(By.cssSelector(p.getProperty("invalidl1"))).isDisplayed();
@@ -95,7 +95,7 @@ public class Login extends Base{
 	 
   }
   
-  @Test(enabled=true, description="login with null email")
+  @Test(enabled=false, description="login with null email")
   public void tc_06() throws Exception {
 	  getData(ex.getData("Sheet2", 6, 0),ex.getData("Sheet2", 6, 1));
 	  boolean d=driver.findElement(By.cssSelector(p.getProperty("invalidl1"))).isDisplayed();
@@ -108,8 +108,10 @@ public class Login extends Base{
   
   
   //reset
-  public void getData1(String email) 
+  public void getData1(String email) throws Exception 
   {
+	  p.load(new FileInputStream("settings.property"));
+	  ext.attachReporter(new ExtentHtmlReporter("login.html"));
 	  driver.get(p.getProperty("url"));
 	  driver.findElement(By.id(p.getProperty("rsign"))).click();
 	  driver.findElement(By.cssSelector(p.getProperty("reset"))).click();
@@ -118,7 +120,7 @@ public class Login extends Base{
   }
   
   @Test(enabled=true, description="reset password with invalid email")
-  public void tc_07() {  
+  public void tc_07() throws Exception {  
       getData1(ex.getData("Sheet2", 7, 0));
       boolean d=driver.findElement(By.cssSelector(p.getProperty("invalidl1"))).isDisplayed();
       Assert.assertTrue(d);  
@@ -129,7 +131,7 @@ public class Login extends Base{
 	  
   }
   @Test(enabled=true, description="reset with null email")
-  public void tc_08(){  
+  public void tc_08() throws Exception{  
       getData1(ex.getData("Sheet2", 8, 0));
       boolean d=driver.findElement(By.cssSelector(p.getProperty("invalidl1"))).isDisplayed();
       Assert.assertTrue(d); 
@@ -170,8 +172,10 @@ public class Login extends Base{
 
 
 //facebook
-  public void getData2(String fname, String pwd)
+  public void getData2(String fname, String pwd) throws Exception
   { 
+	p.load(new FileInputStream("settings.property"));
+	ext.attachReporter(new ExtentHtmlReporter("login.html"));
 	driver.get(p.getProperty("url"));
     driver.findElement(By.id(p.getProperty("signinl"))).click();
     driver.findElement(By.id(p.getProperty("flogin"))).click();   
@@ -199,7 +203,7 @@ public class Login extends Base{
   }
   
   @Test(enabled=true, description="login with facebook missing credentials")
-  public void tc_12()
+  public void tc_12() throws Exception
   {   driver.switchTo().window(driver.getWindowHandles().toArray()[0].toString());
       driver.manage().deleteAllCookies();
   

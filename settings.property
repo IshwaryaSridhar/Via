@@ -47,3 +47,16 @@ click=[class='inlineBtn panelBtn jsSendOtp']
 otp=//input[@value='Send OTP']
 alert=//div[@class='viaAlertMsg']
 
+
+destin=//input[@id='destination']
+checkin=//div[@id='depart-cal']/div[3]/div[2]/div[*]/div[contains(text(),'22')]
+checkout=//div[@id='return-cal']/div[3]/div[2]/div[*]/div[contains(text(),'24')]
+searchhotels=//div[@class='search-hotel u_vertAlignMiddle u_floatR']
+selectrooms=//div[@class='selectBtn js-viewRoom via-processed']
+bookroom=//div[@class='bookBtn js-bookRoom via-processed']
+mobile=//input[@id='contactMobile']
+email=//input[@id='contactEmail']
+Terms&conditions=//label[@id='read_terms_label']
+proceedtobooking=//button[normalize-space()='Proceed to Booking']
+confirmproceedbtn=//button[@id='confirmProceedPayBtn']
+
