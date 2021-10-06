@@ -15,16 +15,14 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
-public class Hotels extends Base {
-	
-	Excel_Import ex= new Excel_Import("C:\\Users\\vasanth\\OneDrive\\Desktop\\HotelData.xlsx");
+public class Hotels extends Base
+{
+	Excel_Import ex= new Excel_Import("src/test/resources/data/HotelData.xlsx");
 	Properties p =new Properties();
 	ExtentReports ex1= new ExtentReports();
-
+	
 	public void search(String destination) throws Exception
 	{
-	  //driver.findElement(By.id("wzrk-cancel")).click();
-	  //driver.get("https://in.via.com/");	
 		p.load(new FileInputStream("settings.property"));
 		driver.get(p.getProperty("url"));
 		ex1.attachReporter(new ExtentHtmlReporter("HotelBookingReport1.html"));
@@ -35,11 +33,9 @@ public class Hotels extends Base {
 
 		driver.findElement(By.xpath(p.getProperty("destin"))).sendKeys(destination);
 		Thread.sleep(2000);
-     //	driver.findElement(By.xpath("//ul[@id='ui-id-1']/li[2]/span")).click();
 		driver.findElement(By.xpath(p.getProperty("destin"))).sendKeys(Keys.ARROW_DOWN);
 		Thread.sleep(1000);
 		driver.findElement(By.xpath(p.getProperty("destin"))).sendKeys(Keys.ENTER);
-				
 		driver.findElement(By.xpath("//input[@id='checkIn']")).click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath(p.getProperty("checkin"))).click();
@@ -78,38 +74,30 @@ public class Hotels extends Base {
 		WebElement w1=driver.findElement(By.name("Room0AdultFirstName0"));
 				   w1.clear();
 				   w1.sendKeys(fname);
-		 	
 		WebElement w2=driver.findElement(By.name("Room0AdultLastName0"));
 		           w2.clear();
 		           w2.sendKeys(lname);
-     		
      	WebElement w3=driver.findElement(By.name("panNumber"));
      			   w3.clear();
                    w3.sendKeys(pan);
-		
-//		WebElement w4=driver.findElement(By.xpath("//input[@id='contactMobile']"));
-		WebElement w4=driver.findElement(By.xpath(p.getProperty("mobile")));
+		WebElement w4=driver.findElement(By.xpath(p.getProperty("hmobile")));
 		           w4.clear();
 		           w4.sendKeys(mobile);
-		
-//		WebElement w5=driver.findElement(By.xpath("//input[@id='contactEmail']"));
-	    WebElement w5=driver.findElement(By.xpath(p.getProperty("email")));           
+	    WebElement w5=driver.findElement(By.xpath(p.getProperty("hemail")));           
 		           w5.clear();
 		           w5.sendKeys(email);
 		
 		}
 	  
-	public void proceed() {
-//		driver.findElement(By.xpath("//label[@id='read_terms_label']")).click();
+	public void proceed()
+	{
+
 		driver.findElement(By.xpath(p.getProperty("Terms&conditions"))).click();
-		
-//		driver.findElement(By.xpath("//button[normalize-space()='Proceed to Booking']")).click();
 		driver.findElement(By.xpath(p.getProperty("proceedtobooking"))).click();
 	}
 	
 	public void proceed1() throws Exception
 	{
-//		driver.findElement(By.xpath("//button[@id='confirmProceedPayBtn']")).click();
 		driver.findElement(By.xpath(p.getProperty("confirmproceedbtn"))).click();
 	
 	}
@@ -118,13 +106,9 @@ public class Hotels extends Base {
 	@Test(enabled=true,description="Book hotel with valid credentials")
 	 public void tc_57() throws Exception
 	{
-      //driver.get("https://in.via.com/");
-      //driver.manage().deleteAllCookies();
 		search(ex.getData("Sheet1", 1, 0));
-	  //search("mumbai");
 		Thread.sleep(1000);
 		search1(ex.getData("Sheet1", 1, 1),ex.getData("Sheet1", 1, 2),ex.getData("Sheet1", 1, 3),ex.getData("Sheet1", 1, 4),ex.getData("Sheet1", 1, 5),ex.getData("Sheet1", 1, 6));
-	  //search1("Mr","randy","orton","qwert1234y", "9876543210", "randy@gmail.com");
 		Thread.sleep(1000);
 		proceed();
 		Thread.sleep(1000);
@@ -136,17 +120,14 @@ public class Hotels extends Base {
 		ExtentTest tc=ex1.createTest("HotelBookingTest1");
 		tc.info("Book hotel with valid credentials");
 		tc.pass("test pass");	
-//		ex1.flush();
+
 	}
 	
 	
 	@Test(enabled=true,description="Unable to book hotel with invalid destination")
 	public void tc_58() throws Exception
 	{
-	   //driver.get("https://in.via.com/");
-	  //driver.manage().deleteAllCookies();
 		search(ex.getData("Sheet1", 2, 0));
-	  //search("chennnnai");
 		boolean data=driver.findElement(By.xpath("//*[text()='Select Destination']")).isDisplayed();
 		Assert.assertTrue(data);
 		System.out.println(driver.findElement(By.xpath("//*[text()='Select Destination']")).getText());
@@ -154,18 +135,14 @@ public class Hotels extends Base {
 		ExtentTest tc=ex1.createTest("HotelBookingTest2");
 		tc.info("Unable to book hotel with invalid destination");
 		tc.pass("test pass");
-//		ex1.flush();
+
 	}
 	
 	@Test(enabled=true,description="Unable to book hotel with invalid title")
 	public void tc_59() throws Exception
 	{
-	  //driver.get("https://in.via.com/");
-	  //driver.manage().deleteAllCookies();
-	  //search("chennai");
 		search(ex.getData("Sheet1", 3, 0));
 		Thread.sleep(1000);
-	  //search1("Title","randy","orton","qwert1234y", "9876543210", "randy@gmail.com");
 		search1(ex.getData("Sheet1", 3, 1),ex.getData("Sheet1", 3, 2),ex.getData("Sheet1", 3, 3),ex.getData("Sheet1", 3, 4),ex.getData("Sheet1", 3, 5),ex.getData("Sheet1", 3, 6));
 		Thread.sleep(1000);
 		proceed();
@@ -176,18 +153,14 @@ public class Hotels extends Base {
 		ExtentTest tc=ex1.createTest("HotelBookingTest3");
 		tc.info("Unable to book hotel with invalid title");
 		tc.pass("test pass");
-//		ex1.flush();
+
 	}
 	
 	@Test(enabled=true,description="Unable to book hotel with invalid first name")
 	public void tc_60() throws Exception
 	{
-      //driver.get("https://in.via.com/");
-      //driver.manage().deleteAllCookies();
-	  //search("chennai");
 		search(ex.getData("Sheet1", 4, 0));
 		Thread.sleep(1000);
-	  //search1("Mr","","orton","qwert1234y", "9876543210", "randy@gmail.com");
 		search1(ex.getData("Sheet1", 4, 1),ex.getData("Sheet1", 4, 2),ex.getData("Sheet1", 4, 3),ex.getData("Sheet1", 4, 4),ex.getData("Sheet1", 4, 5),ex.getData("Sheet1", 4, 6));
 		Thread.sleep(1000);
 		proceed();
@@ -198,18 +171,14 @@ public class Hotels extends Base {
 		ExtentTest tc=ex1.createTest("HotelBookingTest4");
 		tc.info("Unable to book hotel with invalid first name");
 		tc.pass("test pass");
-//		ex1.flush();
+
 	}
 	
 	@Test(enabled=true,description="Unable to book hotel with invalid last name")
 	public void tc_61() throws Exception
 	{
-	   //driver.get("https://in.via.com/");
-	  //driver.manage().deleteAllCookies();
-	  //search("chennai");
 		search(ex.getData("Sheet1", 5, 0));
 		Thread.sleep(1000);
-	  //search1("Mr","randy","","qwert1234y", "9876543210", "randy@gmail.com");
 		search1(ex.getData("Sheet1", 5, 1),ex.getData("Sheet1", 5, 2),ex.getData("Sheet1", 5, 3),ex.getData("Sheet1", 5, 4),ex.getData("Sheet1", 5, 5),ex.getData("Sheet1", 5, 6));
 		Thread.sleep(1000);
 		proceed();
@@ -220,18 +189,14 @@ public class Hotels extends Base {
 		ExtentTest tc=ex1.createTest("HotelBookingTest5");
 		tc.info("Unable to book hotel with invalid last name");
 		tc.pass("test pass");
-//		ex1.flush();
+
 	}
 	
 	@Test(enabled=true,description="Unable to book hotel with invalid pan number")
 	public void tc_62() throws Exception
 	{
-	   //driver.get("https://in.via.com/");
-	  //driver.manage().deleteAllCookies();
-	  //search("chennai");
 		search(ex.getData("Sheet1", 6, 0));
 		Thread.sleep(1000);
-	  //search1("Mr","randy","orton","123456", "9876543210", "randy@gmail.com");
 		search1(ex.getData("Sheet1", 6, 1),ex.getData("Sheet1", 6, 2),ex.getData("Sheet1", 6, 3),ex.getData("Sheet1", 6, 4),ex.getData("Sheet1", 6, 5),ex.getData("Sheet1", 6, 6));
 		Thread.sleep(1000);
 		proceed();
@@ -242,18 +207,13 @@ public class Hotels extends Base {
 		ExtentTest tc=ex1.createTest("HotelBookingTest6");
 		tc.info("Unable to book hotel with invalid pan number");
 		tc.pass("test pass");
-//		ex1.flush();
 	}
 	
 	@Test(enabled=true,description="Unable to book hotel with invalid mobile number")
 	public void tc_63() throws Exception
 	{
-	  //driver.get("https://in.via.com/");
-	  //driver.manage().deleteAllCookies();
-	  //search("chennai");
 		search(ex.getData("Sheet1", 7, 0));
 		Thread.sleep(1000);
-	  //search1("Mr","randy","orton","qwert1234y", "987avd3210", "randy@gmail.com");
 		search1(ex.getData("Sheet1", 7, 1),ex.getData("Sheet1", 7, 2),ex.getData("Sheet1", 7, 3),ex.getData("Sheet1", 7, 4),ex.getData("Sheet1", 7, 5),ex.getData("Sheet1", 7, 6));
 		Thread.sleep(1000);
 		proceed();
@@ -264,19 +224,14 @@ public class Hotels extends Base {
 		ExtentTest tc=ex1.createTest("HotelBookingTest7");
 		tc.info("Unable to book hotel with invalid mobile number");
 		tc.pass("test pass");
-//		ex1.flush();
 	}
 	
 
 	@Test(enabled=true,description="Unable to book hotel with invalid email id")
 	public void tc_64() throws Exception
 	{
-	  //driver.get("https://in.via.com/");
-	  //driver.manage().deleteAllCookies();
-	  //search("chennai");
 		search(ex.getData("Sheet1", 8, 0));
 		Thread.sleep(1000);
-	  //search1("Mr","randy","orton","qwert1234y", "9876543210", "randy.com");
 		search1(ex.getData("Sheet1", 8, 1),ex.getData("Sheet1", 8, 2),ex.getData("Sheet1", 8, 3),ex.getData("Sheet1", 8, 4),ex.getData("Sheet1", 8, 5),ex.getData("Sheet1", 8, 6));
 		Thread.sleep(1000);
 		proceed();
@@ -287,18 +242,13 @@ public class Hotels extends Base {
 		ExtentTest tc=ex1.createTest("HotelBookingTest8");
 		tc.info("Unable to book hotel with invalid email id");
 	    tc.pass("test pass");
-//		ex1.flush();
 	}
 	
 	@Test(enabled=true,description="Unable to book hotel with invalid checkbox")
 	public void tc_65() throws Exception
 	{
-	  //driver.get("https://in.via.com/");
-	  //driver.manage().deleteAllCookies();
-	  //search("chennai");
 		search(ex.getData("Sheet1", 9, 0));
 		Thread.sleep(1000);
-	  //search1("Mr","randy","orton","qwert1234y", "9876543210", "randy@gmail.com");
 		search1(ex.getData("Sheet1", 9, 1),ex.getData("Sheet1", 9, 2),ex.getData("Sheet1", 9, 3),ex.getData("Sheet1", 9, 4),ex.getData("Sheet1", 9, 5),ex.getData("Sheet1", 9, 6));
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//button[normalize-space()='Proceed to Booking']")).click();
@@ -309,19 +259,14 @@ public class Hotels extends Base {
 		ExtentTest tc=ex1.createTest("HotelBookingTest9");
 		tc.info("Unable to book hotel with invalid checkbox");
 		tc.pass("test pass");
-//		ex1.flush();
 	}
 	
 	
 	@Test(enabled=true,description="Checking the edit option")
 	public void tc_66() throws Exception
 	{
-	  //driver.get("https://in.via.com/");
-	  //driver.manage().deleteAllCookies();
-      //search("chennai");
 		search(ex.getData("Sheet1", 10, 0));
 		Thread.sleep(1000);
-	  //search1("Mr","randy","orton","qwert1234y", "9876543210", "randy@gmail.com");
 		search1(ex.getData("Sheet1", 10, 1),ex.getData("Sheet1", 10, 2),ex.getData("Sheet1", 10, 3),ex.getData("Sheet1", 10, 4),ex.getData("Sheet1", 10, 5),ex.getData("Sheet1", 10, 6));
 		Thread.sleep(1000);
 		proceed();

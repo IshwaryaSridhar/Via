@@ -3,16 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="via.Login">
+      <class name="via.OneWay">
         <methods>
-          <include name="tc_10"/>
           <include name="beforeTest"/>
-          <include name="tc_12"/>
+          <include name="tc_26"/>
           <include name="afterTest"/>
-          <include name="tc_09"/>
-          <include name="tc_11"/>
         </methods>
-      </class> <!-- via.Login -->
+      </class> <!-- via.OneWay -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

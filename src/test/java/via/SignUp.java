@@ -32,7 +32,7 @@ public class SignUp extends Base {
 	  driver.get(p.getProperty("url"));
 	  driver.findElement(By.id(p.getProperty("signin"))).click();
 	  driver.findElement(By.xpath(p.getProperty("signup"))).click();
-	  driver.findElement(By.xpath(p.getProperty("email"))).sendKeys(email);
+	  driver.findElement(By.xpath(p.getProperty("mail"))).sendKeys(email);
 	  driver.findElement(By.xpath(p.getProperty("name"))).sendKeys(name);
 	  driver.findElement(By.xpath(p.getProperty("pwd"))).sendKeys(pwd);
 	  driver.findElement(By.xpath(p.getProperty("mob"))).sendKeys(mobile);
